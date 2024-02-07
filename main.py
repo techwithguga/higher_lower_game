@@ -1,6 +1,15 @@
 #display art
+from art import logo
+from game_data import data
+import random
 
 # generate a random account from the game data
+
+print(logo)
+account_a = random.choice(data)
+print(account_a)
+account_b = random.choice(data)
+print(account_b)
 
 # format the account data into printable format 
 
