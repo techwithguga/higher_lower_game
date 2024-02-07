@@ -28,13 +28,18 @@ def check_answer(guess, a_followers, b_followers):
 print(logo)
 score = 0
 continue_game = True
+account_b = random.choice(data)
+
 #make game repeatable if user is right. recursive game()
 while continue_game:
 
     # generate a random account from the game data
-    account_a = random.choice(data)
+    
+    #make account position B become the next account at position A
+    account_a = account_b
     account_b = random.choice(data)
-    if account_a == account_b:
+    
+    while account_a == account_b:
         account_b = random.choice(data)
     
     print(f"Compare A : {format_data(account_a)}")
@@ -63,6 +68,5 @@ while continue_game:
     #keep score +1 if user guess is correct. End game if wrong and display score
     
     
-    #make account position B become the next account at position A
     
     #clear the terminal screen between rounds.
