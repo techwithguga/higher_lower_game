@@ -10,6 +10,19 @@ def format_data(account):
     account_descr = account["description"]
     account_country = account["country"]
     return f"{account_name},a {account_descr}, from {account_country}"
+    
+# use if statement to compare and check if user is correct
+def check_answer(guess, a_followers, b_followers):
+    """Take the user guess and follower counts and return if user got it right"""
+    if a_followers > b_followers:
+        # if guess == "a":
+        #     return True
+        # else:
+        #     return False
+        return guess == "a"
+    else:
+        return guess == "b"
+
 
 #display art
 print(logo)
@@ -31,7 +44,9 @@ guess = input("Who has more followers ? Type 'A' or 'B': ").lower()
 
 #check if user is correct
 ## get the follower count of each account
-## use if statement to compare and check if user is correct
+a_follower_acount = account_a["follower_count"]
+b_follower_acount = account_b["follower_count"]
+
 
 #give user feedback on their guess.
 
