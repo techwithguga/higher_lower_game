@@ -1,6 +1,7 @@
 from art import logo, vs , correct , wrong
 from game_data import data
 import random
+from replit import clear
 
 
 # format the account data into printable format 
@@ -15,10 +16,6 @@ def format_data(account):
 def check_answer(guess, a_followers, b_followers):
     """Take the user guess and follower counts and return if user got it right"""
     if a_followers > b_followers:
-        # if guess == "a":
-        #     return True
-        # else:
-        #     return False
         return guess == "a"
     else:
         return guess == "b"
@@ -32,8 +29,6 @@ account_b = random.choice(data)
 
 #make game repeatable if user is right. recursive game()
 while continue_game:
-
-    # generate a random account from the game data
     
     #make account position B become the next account at position A
     account_a = account_b
@@ -55,7 +50,9 @@ while continue_game:
     b_follower_acount = account_b["follower_count"]
     
     is_correct = check_answer(guess,a_follower_acount, b_follower_acount)
-    
+
+    clear()
+
     #give user feedback on their guess.
     if is_correct:
         score+=1
@@ -65,8 +62,4 @@ while continue_game:
         continue_game = False
         print(wrong)
         print(f"Sorry, that's wrong! Your final score is : {score}")
-    #keep score +1 if user guess is correct. End game if wrong and display score
-    
-    
-    
-    #clear the terminal screen between rounds.
+
