@@ -26,6 +26,7 @@ def check_answer(guess, a_followers, b_followers):
 
 #display art
 print(logo)
+score = 0
 
 # generate a random account from the game data
 account_a = random.choice(data)
@@ -47,9 +48,14 @@ guess = input("Who has more followers ? Type 'A' or 'B': ").lower()
 a_follower_acount = account_a["follower_count"]
 b_follower_acount = account_b["follower_count"]
 
+is_correct = check_answer(guess,a_follower_acount, b_follower_acount)
 
 #give user feedback on their guess.
-
+if is_correct:
+    score+=1
+    print("You're right!")
+else:
+    print(f"Sorry, that's wrong! Your final score is : {score}")
 #keep score +1 if user guess is correct. End game if wrong and display score
 
 #make game repeatable if user is right. recursive game()
